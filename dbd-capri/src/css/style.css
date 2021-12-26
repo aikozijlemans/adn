@@ -49,7 +49,6 @@ File: scss
 /******************* 
 Global Styles 
 *******************/
-@import url(https://adn.siondevelopment.xyz/dbd-capri/src/css/font-awesome.min.css);
 @import url(https://adn.siondevelopment.xyz/dbd-capri/src/css/spinners.css);
 @import url(https://adn.siondevelopment.xyz/dbd-capri/src/css/animate.css);
 * {
