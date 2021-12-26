@@ -49,9 +49,9 @@ File: scss
 /******************* 
 Global Styles 
 *******************/
-@import url(../scss/icons/font-awesome/css/font-awesome.min.css);
-@import url(../css/spinners.css);
-@import url(../css/animate.css);
+@import url(https://adn.siondevelopment.xyz/dbd-capri/src/css/font-awesome.min.css);
+@import url(https://adn.siondevelopment.xyz/dbd-capri/src/css/spinners.css);
+@import url(https://adn.siondevelopment.xyz/dbd-capri/src/css/animate.css);
 * {
   outline: none; }
 
