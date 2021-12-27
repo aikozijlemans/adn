@@ -6444,3 +6444,6 @@ gr-main-header {
 .feed-builder-icon {
     border: 1px solid rgb(60, 65, 67) !important;
 }
+html {
+    background: rgb(27, 30, 31) !important;
+}
