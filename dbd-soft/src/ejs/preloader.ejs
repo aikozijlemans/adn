@@ -16,12 +16,6 @@ if(now == 'error') currentPage = "Error";
 <title>
   <%=themeConfig.websiteName%> - <%-currentPage%>
 </title>
-<% if(req.session.user) { %>
-<script>
-let userID = '<%-req.session.user.id%>';
-let userTag = '<%-req.session.user.tag%>';
-</script>
-<%}%>
 <!--     Fonts and icons     -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 <link href='https://fonts.googleapis.com/css?family=Alatsi' rel='stylesheet'>
@@ -34,7 +28,6 @@ let userTag = '<%-req.session.user.tag%>';
 <script src="https://cdn.jsdelivr.net/npm/jquery.skeleton.loader@1.2.0/dist/jquery.scheletrone.min.js"></script>
 <link href="/css/nucleo-svg.css" rel="stylesheet" />
 <!-- CSS Files -->
-<%if(now == 'manage'){%><link href="https://adn.siondevelopment.xyz/dbd-soft/src/css/guild.css" rel="stylesheet" /><%}%>
 <link id="pagestyle" href="https://adn.siondevelopment.xyz/dbd-soft/src/css/soft-ui-dashboard.css" rel="stylesheet" />
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <link href="/css/jquery-ui.css" rel="stylesheet" />
@@ -62,6 +55,16 @@ let userTag = '<%-req.session.user.tag%>';
   }
 </style>
 <script>
+    <% if(req.session.user) { %>
+let userID = '<%-req.session.user.id%>';
+let userTag = '<%-req.session.user.tag%>';
+<%}%>
+    function ShowDiv(set) {
+    var div = document.getElementById("server_info");
+    if(set === "settings") div.style.display = "none";
+    else div.style.display = "block";
+  }
+
   function preloaderFadeOutInit() {
     $('.preloader').fadeOut('slow');
     $('body').attr('id', '');
@@ -72,26 +75,6 @@ let userTag = '<%-req.session.user.tag%>';
       preloaderFadeOutInit();
     })(jQuery);
   });
-</script>
-<script src="https://kit.fontawesome.com/5c57f03f9b.js" crossorigin="anonymous"></script>
-<!--   Core JS Files   -->
-<script src="./js/custom.js"></script>
-<script src="./js/jquery-ui.js"></script>
-<script src="./js/core/popper.min.js"></script>
-<script src="./js/core/bootstrap.min.js"></script>
-<script src="/js/plugins/perfect-scrollbar.min.js"></script>
-<script src="/js/plugins/smooth-scrollbar.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>
-  function ShowDiv(set) {
-    var div = document.getElementById("server_info");
-    if(set === "settings") div.style.display = "none";
-    else div.style.display = "block";
-  }
-</script>
-<script src="assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
-<script>
   var win = navigator.platform.indexOf('Win') > -1;
   if (win && document.querySelector('#sidenav-scrollbar')) {
     var options = {
@@ -99,12 +82,6 @@ let userTag = '<%-req.session.user.tag%>';
     }
     Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
   }
-</script>
-<script src="/js/plugins/chartjs.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<%- include('theme.ejs') %>
-<%- include('secret.ejs') %>
-<script>
   const selectedTheme = getCookie("selectedTheme");
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // device has dark mode enabled
@@ -147,9 +124,7 @@ let userTag = '<%-req.session.user.tag%>';
   }
   return "";
 }
-</script>
-<script>
-  function sweetalert(icons, text, timer){
+function sweetalert(icons, text, timer){
     var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
     let pos = 'top-end';
     if(is_mobile) pos = 'bottom-end';
@@ -170,34 +145,24 @@ let userTag = '<%-req.session.user.tag%>';
       title: text
     })
   }
-
+  <% if(req.displayLoggedInInfo == true) {%>
   window.onload = function() {
-    <% if(req.displayLoggedInInfo == true) {%> sweetalert("success", "Successfully signed in.", 2000) <%}%>
+    sweetalert("success", "Successfully signed in.", 2000)
   };
-  </script>
-
-<script>
-  $(window).resize(function () {
-    setMaxHeight();
-  });
-
-  function setMaxHeight() {
-  return;
-    /*var elmnt = document.getElementById("scroll");
-    var overflow = elmnt.scrollHeight;
-    var hidden = window.innerHeight;
-    if (hidden > overflow) {
-      hidden = hidden + "px";
-      elmnt.style.height = hidden;
-    }
-    else {
-      overflow = overflow + "px";
-      elmnt.style.height = overflow;
-    }*/
-  }
-
-  window.onload = function () {
-    setMaxHeight();
-  };
+  <%}%>
 </script>
-
+<script src="https://kit.fontawesome.com/5c57f03f9b.js" crossorigin="anonymous"></script>
+<!--   Core JS Files   -->
+<script src="./js/custom.js"></script>
+<script src="./js/jquery-ui.js"></script>
+<script src="./js/core/popper.min.js"></script>
+<script src="./js/core/bootstrap.min.js"></script>
+<script src="/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="/js/plugins/smooth-scrollbar.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/plugins/chartjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<%- include('theme.ejs') %>
+<%- include('secret.ejs') %>
