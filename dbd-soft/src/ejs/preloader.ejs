@@ -5,6 +5,7 @@ if(now == 'commands') currentPage = "Commands";
 if(now == 'pp') currentPage = "Privacy Policy";
 if(now == 'admin') currentPage = "Admin Panel";
 if(now == 'error') currentPage = "Error";
+if(now == 'credits') currentPage = "Credits";
 %>
 
 <meta charset="utf-8" />
@@ -111,6 +112,7 @@ if(now == 'error') currentPage = "Error";
     }
     Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
   }
+  <% if(now !== "maintenance") { %>
   const selectedTheme = getCookie("selectedTheme");
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // device has dark mode enabled
@@ -138,6 +140,7 @@ if(now == 'error') currentPage = "Error";
     link.setAttribute('id', 'darkTheme');
     document.head.appendChild(link);
   }
+  <% } %>
   function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -194,4 +197,3 @@ function sweetalert(icons, text, timer){
 <script src="/js/plugins/chartjs.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <%- include('theme.ejs') %>
-<%- include('secret.ejs') %>
