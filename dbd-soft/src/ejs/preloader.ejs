@@ -31,33 +31,6 @@ if(now == 'credits') currentPage = "Credits";
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <link href="/css/jquery-ui.css" rel="stylesheet" />
 <%- include('colorscheme.ejs') %>
-<style>
-  .preloader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 99999999;
-    <% if(themeConfig.preloader){ %>
-      <% if(themeConfig.preloader.image){ %>
-        background-image: url('/img/soft-ui.png');
-      <%}%>
-    <% }else{ %>
-      background-image: url('/img/soft-ui.png');
-    <% } %>
-    /* your icon gif file path */
-    background-repeat: no-repeat;
-    background-color: #FFF;
-    background-position: center;
-  }
-  #scroll {
-    height: 100% !important;
-    overflow: hidden !important;
-  }
-</style>
 <script>
     let prog_width = 0;
     let disabled = false;
@@ -95,16 +68,16 @@ if(now == 'credits') currentPage = "Credits";
     else div.style.display = "block";
   }
 
-  function preloaderFadeOutInit() {
-    $('.preloader').fadeOut('slow');
-    $('body').attr('id', '');
-  }
-  // Window load function
-  jQuery(window).on('load', function () {
-    (function ($) {
-      preloaderFadeOutInit();
-    })(jQuery);
-  });
+  //function preloaderFadeOutInit() {
+  //  $('.preloader').fadeOut('slow');
+  //  $('body').attr('id', '');
+  //}
+  //// Window load function
+  //jQuery(window).on('load', function () {
+  //  (function ($) {
+  //    preloaderFadeOutInit();
+  //  })(jQuery);
+  //});
   var win = navigator.platform.indexOf('Win') > -1;
   if (win && document.querySelector('#sidenav-scrollbar')) {
     var options = {
