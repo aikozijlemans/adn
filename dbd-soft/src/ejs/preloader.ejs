@@ -40,23 +40,54 @@ if(now == 'error') currentPage = "Error";
     width: 100%;
     height: 100vh;
     z-index: 99999999;
-    background-image: url('https://imgr.search.brave.com/13gWrE6Jc0vyWsePxMNDFi5AfU1DyaQUcMBZSlXzU1w/fit/800/600/ce/1/aHR0cHM6Ly9naWZp/bWFnZS5uZXQvd3At/Y29udGVudC91cGxv/YWRzLzIwMTgvMDYv/dHJhbnNwYXJlbnQt/Z2lmLTEzLmdpZg.gif');
+    <% if(themeConfig.preloader){ %>
+      <% if(themeConfig.preloader.image){ %>
+        background-image: url('/img/soft-ui.png');
+      <%}%>
+    <% }else{ %>
+      background-image: url('/img/soft-ui.png');
+    <% } %>
     /* your icon gif file path */
     background-repeat: no-repeat;
     background-color: #FFF;
     background-position: center;
   }
-
   #scroll {
     height: 100% !important;
     overflow: hidden !important;
   }
 </style>
 <script>
+    let prog_width = 0;
+    let disabled = false;
+    document.onreadystatechange = function(e) {
+      if(disabled) return;
+      if(document.readyState === "interactive") {
+        var all = document.getElementsByTagName("*");
+        for (var i=0, max=all.length; i < max; i++) {
+	        checkProgress(all[i]);
+        }
+      }
+    }
+    function checkProgress(ele) {
+	    var all = document.getElementsByTagName("*");
+	    var per_inc= 100/all.length;
+      if(disabled) return;
+
+		  prog_width=prog_width + per_inc;
+      $("#progress").width(`${Math.floor(prog_width)}%`);
+
+      if (prog_width >= 100 && !disabled) {
+        disabled = true;
+        $(".preloader").fadeOut("slow")	
+	    } else {
+		    checkProgress(ele);
+	    }
+    } 
     <% if(req.session.user) { %>
-let userID = '<%-req.session.user.id%>';
-let userTag = '<%-req.session.user.tag%>';
-<%}%>
+      let userID = '<%-req.session.user.id%>';
+      let userTag = '<%-req.session.user.tag%>';
+    <%}%>
     function ShowDiv(set) {
     var div = document.getElementById("server_info");
     if(set === "settings") div.style.display = "none";

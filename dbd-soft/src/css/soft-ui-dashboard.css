@@ -25031,6 +25031,6 @@ h2#swal2-title {
     background-image: linear-gradient(310deg, rgb(97, 32, 162) 0%, rgb(171, 0, 86) 100%);
 }
 
-.alert.alert-info { 
+.alert {
   border: none !important;
 }
