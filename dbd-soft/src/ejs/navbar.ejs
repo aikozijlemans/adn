@@ -1,3 +1,12 @@
+    <%
+    if(now == 'index') currentPage = "Dashboard";
+    if(now == 'manage') currentPage = "Manage Guilds";
+    if(now == 'commands') currentPage = "Commands";
+    if(now == 'pp') currentPage = "Privacy Policy";
+    if(now == 'admin') currentPage = "Admin Panel";
+    if(now == 'error') currentPage = "Error";
+    if(now == 'credits') currentPage = "Credits";
+    %>    
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="false">
       <div class="container-fluid py-1 px-3">
@@ -6,11 +15,7 @@
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
             <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
           </ol>
-          <%if(now == 'index'){%><h6 class="font-weight-bolder mb-0">Dashboard</h6><%}%>
-          <%if(now == 'manage'){%><h6 class="font-weight-bolder mb-0">Manage Guilds</h6><%}%>
-          <%if(now == 'commands'){%><h6 class="font-weight-bolder mb-0">Commands</h6><%}%>
-          <%if(now == 'pp'){%><h6 class="font-weight-bolder mb-0">Privacy Policy</h6><%}%>
-          <%if(now == 'admin'){%><h6 class="font-weight-bolder mb-0">Admin Panel</h6><%}%>
+          <h6 class="font-weight-bolder mb-0"><%-currentPage%></h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
