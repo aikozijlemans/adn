@@ -1,12 +1,16 @@
-    <%
-    if(now == 'index') currentPage = "Dashboard";
-    if(now == 'manage') currentPage = "Manage Guilds";
-    if(now == 'commands') currentPage = "Commands";
-    if(now == 'pp') currentPage = "Privacy Policy";
-    if(now == 'admin') currentPage = "Admin Panel";
-    if(now == 'error') currentPage = "Error";
-    if(now == 'credits') currentPage = "Credits";
-    %>    
+<%
+let currentPage = "Dashboard";
+if(now) {
+  if(now === 'manage') currentPage = "Manage Guilds";
+  if(now === 'commands') currentPage = "Commands";
+  if(now === 'pp') currentPage = "Privacy Policy";
+  if(now === 'admin') currentPage = "Admin Panel";
+  if(now === 'error') currentPage = "Error";
+  if(now === 'credits') currentPage = "Credits";
+  if(now === 'debug') currentPage = "Debug";
+  if(now === 'maintenance') currentPage = "Under Maintenance";
+}
+%>   
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="false">
       <div class="container-fluid py-1 px-3">

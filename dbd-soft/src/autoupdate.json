@@ -1,7 +1,7 @@
 [
       {
         "name": "colorscheme",
-        "version": "1.0.5",
+        "version": "1.0.6",
         "type": "partial"
       },
       {
@@ -21,7 +21,7 @@
       },
       {
         "name": "navbar",
-        "version": "1.0.1",
+        "version": "1.0.11",
         "type": "partial"
       },
       {
@@ -31,7 +31,7 @@
       },
       {
         "name": "preloader",
-        "version": "1.1.1",
+        "version": "1.1.11",
         "type": "partial"
       },
       {
