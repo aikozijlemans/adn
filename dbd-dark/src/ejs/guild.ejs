@@ -382,7 +382,7 @@
                                     </div>
                                 </nav>
                                 <% if(successes == null && errors == null){ %>
-                                <% }else if(req.query.success == 'true' && req.query.error == 'false' ){ %>
+                                <% }else if(req.query.success){ %>
                                     <script>
                                         window.onload = function () {
                                             const Toast = Swal.mixin({
