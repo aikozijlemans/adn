@@ -34,6 +34,18 @@ if(now) {
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <link href="/css/jquery-ui.css" rel="stylesheet" />
 <%- include('colorscheme.ejs') %>
+<% if(now == "maintenance") { %>
+  <style>
+    .blur.blur-rounded {
+      border-radius: 17px;
+    }
+  
+    a.btn.btn-sm.bg-gradient-primary.btn-round.mb-0.me-1.mt-2.mt-md-0 {
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+    }
+  </style>
+<% } %>
 <script>
     let prog_width = 0;
     let disabled = false;
