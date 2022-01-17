@@ -18,6 +18,25 @@ _______|_______/__/ ____ \__\__|___\__\__|___\__\____
 |__|   \__\____/__/      \__\_______/ |______|__|   \__\
                 https://darkreader.org
 */
+/* Dark mode for maintenance*/
+.dark-wave-1 {
+    fill: rgba(24, 26, 27, 0.45) !important;
+}
+.dark-wave-2 {
+    fill: rgba(24, 26, 27, 0.45) !important;
+}
+.dark-wave-3 {
+    fill: rgba(24, 26, 27, 0.35) !important;
+}
+.dark-wave-4 {
+    fill: rgba(24, 26, 27, 0.3) !important;
+}
+.dark-wave-5 {
+    fill: rgba(24, 26, 27, 0.25) !important;
+}
+.dark-wave-6 {
+    fill: rgba(24, 26, 27) !important;
+}
 
 .preloader {
     background-color: rgb(27 30 31) !important;
