@@ -69,7 +69,8 @@ if(now) {
 
       if (prog_width >= 100 && !disabled) {
         disabled = true;
-        $(".preloader").fadeOut("slow")	
+        $(".preloader").fadeOut("slow");
+        $("#scroll").css('overflow', 'auto');
 	    } else {
 		    checkProgress(ele);
 	    }
