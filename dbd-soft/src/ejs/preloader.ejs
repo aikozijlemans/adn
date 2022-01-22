@@ -102,7 +102,6 @@ if(now) {
     }
     Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
   }
-  <% if(now !== "maintenance") { %>
   const selectedTheme = getCookie("selectedTheme");
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // device has dark mode enabled
@@ -130,7 +129,6 @@ if(now) {
     link.setAttribute('id', 'darkTheme');
     document.head.appendChild(link);
   }
-  <% } %>
   function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
