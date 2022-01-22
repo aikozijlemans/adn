@@ -1,7 +1,7 @@
 <div id="bigIconsList" style="display: none;">
     <%icons.forEach(async(icon) => {%>
-        <div class="feed-code notranslate htmlHigh feeds-code">
-          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center gray-icon-bg" style="margin: auto 0px;">
+        <div style="text-align:center;width:15%;float: left;padding-right:10px;">
+          <div class="icon-shape icon-sm shadow border-radius-md bg-white gray-icon-bg" style="margin: 0 auto">
             <i class="fas fa-<%-icon%> feeds-icon"></i>
           </div>
           <span class="tagnamecolor feeds-desc">
@@ -10,8 +10,8 @@
         </div>
         <%});
         otherIcons.forEach(async(icon) => {%>
-          <div class="feed-code notranslate htmlHigh feeds-code">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center gray-icon-bg" style="margin: auto 0px;">
+          <div style="text-align:center;width:15%;float: left;padding-right:10px;">
+            <div class="icon-shape icon-sm shadow border-radius-md bg-white gray-icon-bg" style="margin: 0 auto">
               <i class="fab fa-<%-icon%> feeds-icon"></i>
             </div>
             <span class="tagnamecolor feeds-desc">
