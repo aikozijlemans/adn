@@ -35,9 +35,11 @@ _______|_______/__/ ____ \__\__|___\__\__|___\__\____
     fill: rgba(24, 26, 27, 0.25) !important;
 }
 .dark-wave-6 {
-    fill: rgba(24, 26, 27) !important;
+    fill: #1b1e1f !important;
 }
-
+.info-maintenance{
+    background: #1b1e1f;
+}
 .preloader {
     background-color: rgb(27 30 31) !important;
   }
