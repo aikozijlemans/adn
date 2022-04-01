@@ -39,6 +39,46 @@ let coltwo;
 %>
 <meta name="theme-color" content="<%-colone%>">
 <style>
+    .swal2-popup.swal2-toast {
+    background-image: linear-gradient(<%-currentCode%>) !important;
+    }
+
+    .swal2-success-circular-line-left {
+        background: none !important;
+    }
+
+    .swal2-success-fix {
+        background: none !important;
+    }
+
+    .swal2-success-circular-line-right {
+    background: none !important;
+    }
+
+    .swal2-success-ring {
+        color: rgba(0,0,0,0) !important;
+        border: rgba(0,0,0,0) !important;
+    }
+
+    .swal2-icon.swal2-success {
+        border-color: <%-colone%> !important;
+        color: <%-colone%> !important;
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-line] {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        height: 0.3125em;
+        border-radius: 0.125em;
+        background-color: <%-colone%> !important;
+    }
+
+    .card.card-background.card-background-mask-info:after {
+        background-image: linear-gradient(<%-currentCode%>) !important;
+        opacity: .85;
+    }
+
     .bg-gradient-primary {
         background-image: linear-gradient(<%-currentCode%>);
     }

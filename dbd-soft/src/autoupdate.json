@@ -1,12 +1,12 @@
 [
       {
         "name": "colorscheme",
-        "version": "1.0.62",
+        "version": "1.0.64",
         "type": "partial"
       },
       {
         "name": "footer",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "type": "partial"
       },
       {
